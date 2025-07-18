@@ -1,4 +1,12 @@
-export default function ProjectCard({ project }) {
+interface Project {
+  image?: string;
+  title: string;
+  description: string;
+  githubLink?: string;
+  liveLink?: string;
+}
+
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden">
       {project.image && (
@@ -9,17 +17,20 @@ export default function ProjectCard({ project }) {
         />
       )}
       <div className="p-4">
-        <h3 className="text-lg font-bold">{project.title}</h3>
-        <p className="mt-1">{project.description}</p>
-        <p className="text-sm text-gray-500 mt-2">{project.tools.join(', ')}</p>
-        <a
-          href={project.link}
-          className="text-blue-500 underline text-sm mt-3 inline-block"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Project
-        </a>
+        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+        <p className="text-gray-700 mb-4">{project.description}</p>
+        <div className="flex gap-4">
+          {project.githubLink && (
+            <a href={project.githubLink} className="text-blue-500" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          )}
+          {project.liveLink && (
+            <a href={project.liveLink} className="text-green-500" target="_blank" rel="noopener noreferrer">
+              Live Demo
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

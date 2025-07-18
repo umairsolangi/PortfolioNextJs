@@ -11,7 +11,7 @@ export default function Home() {
       </div>
 
       <main className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-800">
-        <h1 className="text-4xl font-bold mt-10">Hi, I am  Umair - a frontend developer.</h1>
+        <h1 className="text-4xl font-bold mt-10">Hi I am  Umair - a frontend developer.</h1>
         <p className="mt-4 text-lg">I build fast and responsive websites using React & Next.js</p>
         <Link href="/projects">
           <button className="mt-6 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
